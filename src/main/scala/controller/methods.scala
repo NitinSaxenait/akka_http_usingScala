@@ -5,18 +5,9 @@ import scala.io.Source
 import scala.util.Try
 
 object methods {
-  def fibonacci(input_number: Int): Int = {
-    var num1 = 0
-    var num2 = 1
-    var counter = 0
-
-    while (counter < input_number) {
-      val c = num1 + num2
-      num1 = num2
-      num2 = c
-      counter = counter + 1
-    }
-    counter
+  def fibonacci( inputNumber : Int) : Int = inputNumber match {
+    case 0 | 1 => inputNumber
+    case _ => fibonacci( inputNumber-1 ) + fibonacci( inputNumber-2 )
   }
 
 
